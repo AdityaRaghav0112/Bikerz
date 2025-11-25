@@ -6,22 +6,22 @@ import Coolbg from '../components/Coolbg'
 const Landing = () => {
   const cards = [
     {
-      img: "/img-1.jpg",
+      img: "/about/img1.png",
       title: "Lorem ipsum dolor sit amet consectetur.",
       desc: "Lorem ipsum dolor sit amet consectetur. Nunc gravida consequat faucibus cursus nisi. Nunc montes molestie a vitae vulputate. Phasellus in pulvinar et vitae. Mi eget lectus nec et. Libero iaculis diam nam mauris a eget. Quam nibh rhoncus rhoncus enim venenatis bibendum.",
     },
     {
-      img: "/img-2.jpg",
+      img: "/about/img2.png",
       title: "Lorem ipsum dolor sit amet consectetur.",
       desc: "Lorem ipsum dolor sit amet consectetur. Nunc gravida consequat faucibus cursus nisi. Nunc montes molestie a vitae vulputate. Phasellus in pulvinar et vitae. Mi eget lectus nec et. Libero iaculis diam nam mauris a eget. Quam nibh rhoncus rhoncus enim venenatis bibendum.",
     },
     {
-      img: "/img-3.jpg",
+      img: "/about/img3.png",
       title: "Lorem ipsum dolor sit amet consectetur.",
       desc: "Lorem ipsum dolor sit amet consectetur. Nunc gravida consequat faucibus cursus nisi. Nunc montes molestie a vitae vulputate. Phasellus in pulvinar et vitae. Mi eget lectus nec et. Libero iaculis diam nam mauris a eget. Quam nibh rhoncus rhoncus enim venenatis bibendum.",
     },
     {
-      img: "/img-4.jpg",
+      img: "/about/img4.png",
       title: "Lorem ipsum dolor sit amet consectetur.",
       desc: "Lorem ipsum dolor sit amet consectetur. Nunc gravida consequat faucibus cursus nisi. Nunc montes molestie a vitae vulputate. Phasellus in pulvinar et vitae. Mi eget lectus nec et. Libero iaculis diam nam mauris a eget. Quam nibh rhoncus rhoncus enim venenatis bibendum.",
     },
@@ -198,6 +198,35 @@ const Landing = () => {
         />
       </div>
     </div>
+
+
+     <section className="relative w-full h-[70vh] md:h-[80vh] lg:h-screen overflow-hidden">
+
+      {/* Background Image */}
+      <img
+        src="/coolbg2.png"
+        alt="studio background"
+        className="absolute inset-0 w-full h-full object-fit"
+      />
+
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/20"></div>
+
+      {/* LOGO */}
+      <div className="relative z-10 p-8">
+        <div className="bg-gray-200 text-black font-bold text-2xl px-6 py-3 inline-block rounded">
+          LOGO
+        </div>
+      </div>
+
+      {/* Center Text */}
+      <div className="relative z-10 h-full flex items-center justify-center px-6 text-center">
+        <h1 className="text-white text-2xl md:text-4xl lg:text-5xl font-extrabold leading-tight max-w-3xl">
+          DOLOR SIT AMET CONSECTETUR. QUIS ADIPISCING PURUS EGESTAS ALIQUAM VIVERRA MI.  
+          DOLOR SIT AMET CONSECTETUR. QUIS ADIPISCING
+        </h1>
+      </div>
+    </section>
     </div>
   )
 }
