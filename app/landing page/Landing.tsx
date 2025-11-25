@@ -223,7 +223,7 @@ const Landing = () => {
       <div className="relative z-10 h-full flex items-center justify-center px-6 text-center">
         <h1 className="text-white text-2xl md:text-4xl lg:text-5xl font-extrabold leading-tight max-w-3xl">
           DOLOR SIT AMET CONSECTETUR. QUIS ADIPISCING PURUS EGESTAS ALIQUAM VIVERRA MI.  
-          DOLOR SIT AMET CONSECTETUR. QUIS ADIPISCING
+          DOLOR SIT AMET CONSECTETUR. QUIS 
         </h1>
       </div>
     </section>
