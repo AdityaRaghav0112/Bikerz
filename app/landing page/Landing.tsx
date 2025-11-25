@@ -1,9 +1,61 @@
-import React from 'react'
+"use client"
+
+import React, {useRef, useEffect} from 'react'
 import Hero from '../components/Hero'
 import {ArrowRight, Phone, Motorbike} from 'lucide-react'
 import Coolbg from '../components/Coolbg'
+import {motion} from 'framer-motion'
+import gsap from 'gsap'
+import {useGSAP} from '@gsap/react'
+import { ScrollTrigger } from 'gsap/all'
+import _ScrollTrigger from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(useGSAP)
+gsap.registerPlugin(ScrollTrigger)
 
 const Landing = () => {
+  const textRef = useRef<HTMLDivElement>(null)
+  const imgRef = useRef<HTMLDivElement>(null)
+
+  useGSAP(()=>{
+    gsap.from(".cards", {
+      y:80,
+      scale:0.9,
+      scrollTrigger:{
+        trigger:".cards",
+        scrub:true,
+      }
+    })
+
+    gsap.from(textRef.current, {
+      x:-100,
+      opacity:0,
+      duration:1,
+      scrollTrigger:{
+        trigger:textRef.current,
+        start:"top 50%",
+      }
+    })
+    gsap.from(imgRef.current, {
+      x:100,
+      opacity:0,
+      duration:1,
+      scrollTrigger:{
+        trigger:imgRef.current,
+        start:"top 50%",
+      }
+    })
+
+    gsap.from(".cover-2", {
+      opacity:0,
+      duration:1,
+      scrollTrigger:{
+        trigger:".cover-2",
+        start:"top 50%",
+      }
+    })
+  })
+
   const cards = [
     {
       img: "/about/img1.png",
@@ -30,7 +82,7 @@ const Landing = () => {
   return (
     <div className=''>
       <Hero/>
-
+      
       <div className="cover-2 p-10">
         <h2 className='text-blue-600 font-semibold text-2xl'>Lorem ipsum dolor sit.</h2>
         <div className="main flex gap-10">
@@ -58,11 +110,12 @@ const Landing = () => {
             <img className='h-screen w-1/2 mr-10' src="/cover2.png" alt="" />
         </div>
       </div>
+      
 
       <section className="w-full px-10 py-20 grid grid-cols-1 lg:grid-cols-2 gap-10">
 
-      {/* LEFT CONTENT */}
-      <div className="space-y-6">
+      {/* 3rd PAGE */}
+      <div ref={textRef} className="space-y-6">
         <h4 className="text-blue-600 font-semibold text-lg">
           Lorem ipsum dolor sit amet
         </h4>
@@ -136,8 +189,8 @@ const Landing = () => {
         </div>
       </div>
 
-      {/* RIGHT SIDE IMAGE */}
-      <div className="flex justify-end">
+      {/* 3rd PAGE IMAGE */}
+      <div ref={imgRef} className="flex justify-end">
         <img
           src="/cover3.png"
           alt=""
@@ -165,7 +218,7 @@ const Landing = () => {
       </p>
 
       {/* Grid */}
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid cards md:grid-cols-2 gap-8">
         {cards.map((c, i) => (
           <div
             key={i}
@@ -202,17 +255,15 @@ const Landing = () => {
 
      <section className="relative w-full h-[70vh] md:h-[80vh] lg:h-screen overflow-hidden">
 
-      {/* Background Image */}
+      {/* Background image */}
       <img
         src="/coolbg2.png"
         alt="studio background"
         className="absolute inset-0 w-full h-full object-fit"
       />
-
-      {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/20"></div>
 
-      {/* LOGO */}
+      {/*logo */}
       <div className="relative z-10 p-8">
         <div className="bg-gray-200 text-black font-bold text-2xl px-6 py-3 inline-block rounded">
           LOGO

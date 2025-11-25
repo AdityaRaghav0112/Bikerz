@@ -1,12 +1,18 @@
+"use client"
+
+import { motion } from "framer-motion";
+
 export default function Hero() {
   return (
     <section className="relative w-full flex flex-col md:flex-row items-center pt-20 gap-10 bg-white min-h-screen z-0">
 
       {/* LEFT CONTENT */}
+      <motion.div
+        initial={{x:-20, opacity:0}}
+        animate={{x:0, opacity:1}}
+        transition={{duration:0.6}}>
       <div className="flex-1 z-10 ml-10">
-        <h1 className="text-5xl font-bold mb-4">
-          Lorem ipsum dolor sit amet
-        </h1>
+        <h1 className="text-5xl font-bold mb-4">Lorem ipsum dolor sit amet</h1>
 
         <p className="text-gray-600 mb-6 max-w-lg">
           Lorem ipsum dolor sit amet consectetur. Enim netus cras congue quis elit
@@ -33,20 +39,23 @@ export default function Hero() {
           </span>
         </div>
       </div>
+      </motion.div>
 
-      {/* RIGHT IMAGE COLORED WITH DIAGONAL CUT */}
-      <div className="flex-1 h-screen relative -mt-20">
+      {/* RIGHT IMAGE */}
+      <motion.div
+        initial={{ x: 20, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        className="flex-1 h-screen relative -mt-20"
+      >
         <div
-          className="
-            absolute inset-0 
-            bg-cover bg-center
-          "
+          className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: "url('/cover.png')",
-            clipPath: "polygon(20% 0, 100% 0, 100% 100%, 0 100%)"
+            clipPath: "polygon(20% 0, 100% 0, 100% 100%, 0 100%)",
           }}
         />
-      </div>
+      </motion.div>
     </section>
   );
 }
