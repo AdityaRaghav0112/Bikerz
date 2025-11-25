@@ -2,12 +2,24 @@ import React from "react";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-[#0F1720] text-white h-100 py-16">
+    <footer className="w-full bg-[#0F1720] text-white py-16">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
-          
+
+        {/* GRID */}
+        <div
+          className="
+            grid 
+            grid-cols-1 
+            sm:grid-cols-2 
+            md:grid-cols-3 
+            lg:grid-cols-5 
+            gap-10
+            text-center 
+            lg:text-left
+          "
+        >
           {/* Logo */}
-          <div>
+          <div className="flex justify-center lg:justify-start">
             <div className="bg-gray-300 text-black font-bold text-xl px-6 py-4 inline-block rounded">
               LOGO
             </div>
