@@ -14,6 +14,7 @@ export default function Hero() {
         bg-white 
         min-h-screen 
         z-0
+        overflow-hidden
       "
     >
       {/* LEFT CONTENT */}

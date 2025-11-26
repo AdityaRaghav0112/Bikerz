@@ -179,6 +179,7 @@ const Landing = () => {
     grid-cols-1 
     lg:grid-cols-2 
     gap-10 
+    overflow-hidden
   "
       >
         {/* LEFT TEXT */}
@@ -198,10 +199,10 @@ const Landing = () => {
           </p>
 
           {/* FEATURES LIST */}
-          <div className="space-y-6">
+          <div className="space-y-6 overflow-hidden">
 
             {/* ITEM 1 */}
-            <div className="flex flex-col sm:flex-row items-start gap-4">
+            <div className="flex flex-col sm:flex-row items-start gap-4 overflow-hidden">
               <Motorbike width={50} height={50} />
               <div>
                 <h3 className="font-bold">

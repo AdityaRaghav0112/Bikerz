@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-export default function Hero(): JSX.Element {
+export default function Coolbg() {
     return (
         <section className="relative w-full h-screen overflow-hidden text-white">
 
